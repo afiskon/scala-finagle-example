@@ -12,7 +12,7 @@ import org.jboss.netty.util.CharsetUtil
 
 import org.scalatest._
 
-class FinagleExampleSpec extends FunSpec with Matchers {
+class RestSpec extends FunSpec with Matchers {
   val service = new FinagleServiceExample
   val server = Http.serve(":8080", service)
   val client: Service[HttpRequest, HttpResponse] = Http.newService("localhost:8080")

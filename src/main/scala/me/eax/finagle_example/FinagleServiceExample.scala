@@ -1,7 +1,5 @@
 package me.eax.finagle_example
 
-import java.nio.charset.Charset
-
 import com.twitter.finagle.Service
 import com.twitter.finagle.http.Response
 import com.twitter.util.Future
