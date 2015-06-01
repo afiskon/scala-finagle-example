@@ -1,15 +1,11 @@
 package me.eax.finagle_example.tests
 
-import com.twitter.finagle.Http
-import com.twitter.finagle.Service
-import com.twitter.finagle.http.Response
-import com.twitter.util.{Await, Future}
-import org.jboss.netty.buffer.{ChannelBuffers, DynamicChannelBuffer}
-import org.jboss.netty.handler.codec.http._
-import java.nio.charset._
+import com.twitter.finagle.{Http, Service}
+import com.twitter.util.Await
 import me.eax.finagle_example.FinagleServiceExample
+import org.jboss.netty.buffer.ChannelBuffers
+import org.jboss.netty.handler.codec.http._
 import org.jboss.netty.util.CharsetUtil
-
 import org.scalatest._
 
 class RestSpec extends FunSpec with Matchers {
@@ -21,7 +17,6 @@ class RestSpec extends FunSpec with Matchers {
     it("returns 'not found' for non-exiting key") {
       val request = new DefaultHttpRequest(HttpVersion.HTTP_1_1, HttpMethod.GET, "/some-key")
       val response = Await.result(client(request))
-      // response.getStatus should be(HttpResponseStatus.NOT_FOUND)
       response.getStatus shouldBe HttpResponseStatus.NOT_FOUND
     }
 
