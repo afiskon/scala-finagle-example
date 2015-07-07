@@ -6,6 +6,8 @@ scalaVersion := "2.11.6"
 
 libraryDependencies ++= Seq(
   "com.twitter" %% "finagle-http" % "6.25.0",
+  "ch.qos.logback" % "logback-classic" % "1.1.3",
+  "com.typesafe.scala-logging" %% "scala-logging" % "3.1.0",
   "org.scalatest" %% "scalatest" % "2.2.4" % "test"
   )
 
